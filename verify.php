@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(isset($_SESSION["username"]) && $_SESSION["id"]==session_id()){
     header("location:index2.php");
     die();
@@ -16,14 +15,13 @@ if(isset($_SESSION["username"]) && $_SESSION["id"]==session_id()){
         $_SESSION["role"] = $data["role"];
         $_SESSION["user_id"] = $data["id"];
         $_SESSION["id"] = session_id();
-        header("Location: index2.php");       
+        header("location:index2.php");       
         die();
     }else{
         $_SESSION["error"] = 1;
-        header("location: login.php");       
+        header("location:login.php");       
         die();
     }
     $conn=null;
-
     ?>
         
